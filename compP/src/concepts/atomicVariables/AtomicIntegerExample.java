@@ -1,16 +1,17 @@
-package concepts.threading.atomicVariables;
+package concepts.atomicVariables;
 
-public class ExampleWithoutAtomic {
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class AtomicIntegerExample {
     static class Resource{
-        int a = 0;
+        AtomicInteger atomicInteger = new AtomicInteger(0);
 
-        public int getA() {
-            return a;
+        public int getAtomicInteger() {
+            return atomicInteger.get();
         }
 
-        public void setA() {
-//            System.out.println("update by Thread : "+Thread.currentThread().getName());
-            this.a++;
+        public void setAtomicInteger() {
+            this.atomicInteger.getAndIncrement();
         }
     }
 
@@ -19,13 +20,13 @@ public class ExampleWithoutAtomic {
 
         Thread t1 = new Thread(()->{
             for (int i = 0;i<5000;i++){
-                resource.setA();
+                resource.setAtomicInteger();
             }
         });
 
         Thread t2 = new Thread(()->{
             for (int i = 0;i<400;i++){
-                resource.setA();
+                resource.setAtomicInteger();
             }
         });
 
@@ -37,6 +38,6 @@ public class ExampleWithoutAtomic {
         }catch (Exception e){
 
         }
-        System.out.println(resource.getA());
+        System.out.println(resource.getAtomicInteger());
     }
 }

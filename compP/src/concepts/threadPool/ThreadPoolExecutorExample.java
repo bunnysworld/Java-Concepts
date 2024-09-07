@@ -1,4 +1,4 @@
-package concepts.threading.threadPool;
+package concepts.threadPool;
 
 import java.util.concurrent.*;
 

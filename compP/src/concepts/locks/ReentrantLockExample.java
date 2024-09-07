@@ -1,4 +1,4 @@
-package concepts.threading.locks;
+package concepts.locks;
 
 import java.util.concurrent.locks.ReentrantLock;
 
