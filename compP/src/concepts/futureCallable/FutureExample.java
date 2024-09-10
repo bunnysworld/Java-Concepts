@@ -1,6 +1,5 @@
-package concepts.future;
+package concepts.futureCallable;
 
-import java.nio.file.LinkOption;
 import java.util.concurrent.*;
 
 public class FutureExample {
