@@ -18,7 +18,9 @@ public class Main {
 //        Collection<String> li = map.values();
 //
 //        System.out.println("vf");
-
+        String a = "432";
+        String b = "432";
+        System.out.println(a.compareTo(b));
         int[] arr1 = {-80,-15,-81,-28,-61,63,14,-45,-35,-10};
         int[] arr2 = {-1,-40,-44,41,10,-43,69,10,2};
         findDifference(arr1,arr2);
