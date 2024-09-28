@@ -11,7 +11,7 @@ public class QuickSortExample {
 
     private static void quickSort(int[] arr, int low, int high) {
         if (low < high) {
-            int pi = partitionWithFirstElement(arr, low, high);
+            int pi = partitionWithLastElement(arr, low, high);
             quickSort(arr, low, pi - 1);
             quickSort(arr, pi + 1, high);
         }

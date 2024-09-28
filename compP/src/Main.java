@@ -24,6 +24,12 @@ public class Main {
         int[] arr1 = {-80,-15,-81,-28,-61,63,14,-45,-35,-10};
         int[] arr2 = {-1,-40,-44,41,10,-43,69,10,2};
         findDifference(arr1,arr2);
+        List<Integer> nu = new ArrayList<>();
+        LinkedList<Integer> lg = new LinkedList<>();
+        Integer v = lg.pop();
+
+        nu.add(0,1);
+        nu.sort((o1, o2) -> o1.compareTo(o2));
     }
 
     // [-1,2,69,-40,41,10,-43,-44]
