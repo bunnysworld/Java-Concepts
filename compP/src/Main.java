@@ -1,3 +1,5 @@
+import cp.ltDaily.LargestNumber;
+
 import java.util.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -5,7 +7,13 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         int[] arr = {0,4,400,0,500};
-       specialArray(arr);
+        String s1 = "hello";
+        String s2 = "hello";
+        String ss1 = new String("a");
+        String ss2 = new String("a");
+        if (s1 == s2)
+            System.out.println("true");
+
     }
 
     public static int specialArray(int[] nums) {
