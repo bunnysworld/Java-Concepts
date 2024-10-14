@@ -7,12 +7,10 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         int[] arr = {0,4,400,0,500};
-        String s1 = "hello";
-        String s2 = "hello";
-        String ss1 = new String("a");
-        String ss2 = new String("a");
-        if (s1 == s2)
-            System.out.println("true");
+        char c = 'a';
+        char a = (char) (c+1);
+        System.out.println("fv");
+       
 
     }
 
