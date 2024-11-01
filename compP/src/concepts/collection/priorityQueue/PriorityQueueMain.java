@@ -2,7 +2,7 @@ package concepts.collection.priorityQueue;
 
 public class PriorityQueueMain {
     public static void main(String[] args) {
-        MyPriorityQueue<Integer> pq = new MyPriorityQueue<>((v1,v2) -> v1-v2);
+        CustomPriorityQueue<Integer> pq = new CustomPriorityQueue<>((v1,v2) -> v2-v1);
         pq.add(10);
         pq.add(2);
         pq.add(3);

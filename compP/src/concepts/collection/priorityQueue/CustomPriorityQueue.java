@@ -4,21 +4,21 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class MyPriorityQueue<T> {
+public class CustomPriorityQueue<T> {
 
     List<T> heap;
+
     Comparator<T> comparator;
 
-    public MyPriorityQueue(Comparator<T> comparator) {
-        this.heap = new ArrayList<>();
+    public CustomPriorityQueue(Comparator<T> comparator) {
         this.comparator = comparator;
+        this.heap = new ArrayList<>();
     }
 
     private void swap(int i, int j) {
         T tmp = heap.get(i);
         heap.set(i, heap.get(j));
         heap.set(j, tmp);
-
     }
 
     public void add(T element) {
@@ -36,14 +36,19 @@ public class MyPriorityQueue<T> {
     }
 
     public T pop() {
-        T element = heap.remove(0);
+        if (heap.size() == 0) {
+            return null;
+        }
+        T elem = heap.get(0);
+        swap(0, heap.size() - 1);
+        heap.remove(heap.size() - 1);
         heapifyDown(0);
-        return element;
+        return elem;
     }
 
     private void heapifyDown(int idx) {
-        int leftIdx = 2 * idx + 1;
-        int rightIdx = 2 * idx + 2;
+        int leftIdx = idx * 2 + 1;
+        int rightIdx = idx * 2 + 2;
         int minIdx = idx;
         if (leftIdx < heap.size() && comparator.compare(heap.get(minIdx), heap.get(leftIdx)) > 0) {
             minIdx = leftIdx;
@@ -52,7 +57,7 @@ public class MyPriorityQueue<T> {
             minIdx = rightIdx;
         }
         if (minIdx != idx) {
-            swap(idx, minIdx);
+            swap(minIdx, idx);
             heapifyDown(minIdx);
         }
     }
@@ -60,4 +65,5 @@ public class MyPriorityQueue<T> {
     public boolean isEmpty() {
         return heap.isEmpty();
     }
+
 }
